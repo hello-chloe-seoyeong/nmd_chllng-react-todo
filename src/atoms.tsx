@@ -35,8 +35,21 @@ export const toDoSelector = selector({
   },
 });
 
+export const customCategoryState = atom<string[]>({
+  key: "customCategoryState",
+  default: [],
+});
+
+export const allCategoryState = atom<string[]>({
+  key: "allCatogoryState",
+  default: [...Object.keys(Categories)],
+});
+
 export const categorySelector = selector({
-  key: "categirySelector",
-  get: ({ get }) => {},
-  set: ({ set }) => {},
+  key: "categorySelector",
+  get: ({ get }) => {
+    const defaultCate = get(allCategoryState);
+    const customCate = get(customCategoryState);
+    return [...defaultCate, ...customCate];
+  },
 });

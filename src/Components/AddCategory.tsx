@@ -1,15 +1,19 @@
 import { useForm } from "react-hook-form";
+import { useRecoilState } from "recoil";
+import { customCategoryState } from "../atoms";
 
 interface ICateForm {
   cate: string;
 }
 function AddCategory() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, setValue } = useForm<ICateForm>();
+  const [custom, setCustom] = useRecoilState(customCategoryState);
   const onValid = ({ cate }: ICateForm) => {
-    return true;
+    setCustom((prev) => [...prev, cate]);
+    setValue("cate", "");
   };
   return (
-    <form>
+    <form onSubmit={handleSubmit(onValid)}>
       <input
         type="text"
         {...register("cate", {

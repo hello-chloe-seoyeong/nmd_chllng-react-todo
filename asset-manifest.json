@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/nmd_chllng-react-todo/static/js/main.5223f7ec.js",
+    "main.js": "/nmd_chllng-react-todo/static/js/main.b093947e.js",
     "index.html": "/nmd_chllng-react-todo/index.html",
-    "main.5223f7ec.js.map": "/nmd_chllng-react-todo/static/js/main.5223f7ec.js.map"
+    "main.b093947e.js.map": "/nmd_chllng-react-todo/static/js/main.b093947e.js.map"
   },
   "entrypoints": [
-    "static/js/main.5223f7ec.js"
+    "static/js/main.b093947e.js"
   ]
 }

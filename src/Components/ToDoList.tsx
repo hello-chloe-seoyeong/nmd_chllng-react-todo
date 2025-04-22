@@ -3,7 +3,6 @@ import {
   Categories,
   categorySelector,
   categoryState,
-  customCategoryState,
   toDoSelector,
 } from "../atoms";
 import React from "react";
@@ -22,11 +21,12 @@ function ToDoList() {
   };
 
   return (
-    <div>
+    <div style={{ maxWidth: 700, margin: "0 auto" }}>
       <h1>To Do</h1>
       <hr />
       <AddCategory />
-      <div>
+      <hr />
+      <div style={{ display: "flex", gap: 10 }}>
         <select value={category} onInput={onInput}>
           {combineCategory.map((c) => (
             <option key={c} value={c}>

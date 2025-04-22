@@ -27,7 +27,7 @@ function CreateToDo() {
         })}
         placeholder="What are you gonna do?"
       />
-      <button>Add</button>
+      <button style={{ marginLeft: 5 }}>Add</button>
     </form>
   );
 }

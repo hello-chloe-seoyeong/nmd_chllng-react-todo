@@ -20,7 +20,7 @@ function AddCategory() {
           required: "If you want to create a new category, write it.",
         })}
       />
-      <button>Create Category</button>
+      <button style={{ marginLeft: 5 }}>Create Category</button>
     </form>
   );
 }

@@ -6,11 +6,11 @@ function ToDo({ text, category, id }: IToDo) {
   const allCate = useRecoilValue(categorySelector);
   const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const {
-      currentTarget: { title },
+      currentTarget: { name },
     } = event;
     setToDos((oldToDos) => {
       const targetIndex = oldToDos.findIndex((todo) => todo.id === id);
-      const newTodo = { id, text, category: title as IToDo["category"] };
+      const newTodo = { id, text, category: name as IToDo["category"] };
       return [
         ...oldToDos.slice(0, targetIndex),
         newTodo,
@@ -19,8 +19,8 @@ function ToDo({ text, category, id }: IToDo) {
     });
   };
   return (
-    <li>
-      <span>{text}</span>
+    <li style={{ display: "flex", gap: 5, marginBottom: 10 }}>
+      <span style={{ marginRight: 5 }}>{text}</span>
       {category !== Categories.TODO && (
         <button name={Categories.TODO} onClick={onClick}>
           TO DO
